@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dentist Websites | Oryva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 3rem 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a2e;
+        }
+        .card .location {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .card .url {
+            color: #667eea;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .badge-blue { background: #e8f1fa; color: #1e4b8e; }
+        .badge-warm { background: #fdf2e9; color: #8b6f5c; }
+        .badge-teal { background: #e5f4f4; color: #1a8b8b; }
+        .badge-green { background: #e8ede9; color: #2d5a4a; }
+        .badge-violet { background: #f0ebf7; color: #6b4e9b; }
+        .badge-coral { background: #fdf0ed; color: #c67b5c; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dentist Websites</h1>
+        <p class="subtitle">Personalized dental practice websites by Oryva</p>
+        <div class="grid">
+            <a href="https://hoke.oryva.site" class="card">
+                <span class="badge badge-green">Virginia</span>
+                <h2>Hoke Family Dentistry</h2>
+                <p class="location">Narrows, VA 24124</p>
+                <p class="url">hoke.oryva.site</p>
+            </a>
+            <a href="https://priority.oryva.site" class="card">
+                <span class="badge badge-blue">Ohio</span>
+                <h2>Priority Medical Family Practice</h2>
+                <p class="location">Zanesville, OH 43701</p>
+                <p class="url">priority.oryva.site</p>
+            </a>
+            <a href="https://aspire.oryva.site" class="card">
+                <span class="badge badge-violet">North Carolina</span>
+                <h2>Aspire Family Dentistry</h2>
+                <p class="location">Lexington, NC 27292</p>
+                <p class="url">aspire.oryva.site</p>
+            </a>
+            <a href="https://sullivan.oryva.site" class="card">
+                <span class="badge badge-green">Pennsylvania</span>
+                <h2>Sullivan Daniel J DDS</h2>
+                <p class="location">Moscow, PA 18444</p>
+                <p class="url">sullivan.oryva.site</p>
+            </a>
+            <a href="https://ellenweber.oryva.site" class="card">
+                <span class="badge badge-coral">Texas</span>
+                <h2>Dr. Ellen Weber DDS</h2>
+                <p class="location">Palestine, TX 75801</p>
+                <p class="url">ellenweber.oryva.site</p>
+            </a>
+            <a href="https://grace.oryva.site" class="card">
+                <span class="badge badge-blue">Michigan</span>
+                <h2>Grace Dental Care</h2>
+                <p class="location">Madison Heights, MI 48071</p>
+                <p class="url">grace.oryva.site</p>
+            </a>
+            <a href="https://belvidere.oryva.site" class="card">
+                <span class="badge badge-warm">Illinois</span>
+                <h2>Family Dental Care of Belvidere</h2>
+                <p class="location">Belvidere, IL 61008</p>
+                <p class="url">belvidere.oryva.site</p>
+            </a>
+            <a href="https://driandennis.oryva.site" class="card">
+                <span class="badge badge-teal">Florida</span>
+                <h2>Dr. Ian Dennis DMD</h2>
+                <p class="location">High Springs, FL 32643</p>
+                <p class="url">driandennis.oryva.site</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
