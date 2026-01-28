@@ -1,19 +1,19 @@
 {
   "rewrites": [
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [{ "type": "host", "value": "grace.oryva.site" }],
-      "destination": "/grace/:path*"
+      "destination": "/grace/index.html"
     },
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [{ "type": "host", "value": "belvidere.oryva.site" }],
-      "destination": "/belvidere/:path*"
+      "destination": "/belvidere/index.html"
     },
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [{ "type": "host", "value": "driandennis.oryva.site" }],
-      "destination": "/driandennis/:path*"
+      "destination": "/driandennis/index.html"
     }
   ]
 }
