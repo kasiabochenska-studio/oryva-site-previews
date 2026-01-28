@@ -1,44 +1,19 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "hoke.oryva.site" }],
-      "destination": "/hoke-family-dentistry.html"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "priority.oryva.site" }],
-      "destination": "/priority-medical-family-practice.html"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "aspire.oryva.site" }],
-      "destination": "/aspire-family-dentistry.html"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "sullivan.oryva.site" }],
-      "destination": "/sullivan-dental.html"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "ellenweber.oryva.site" }],
-      "destination": "/dr-ellen-weber.html"
-    },
-    {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "grace.oryva.site" }],
-      "destination": "/grace-dental-care.html"
+      "destination": "/grace/:path*"
     },
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "belvidere.oryva.site" }],
-      "destination": "/family-dental-belvidere.html"
+      "destination": "/belvidere/:path*"
     },
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "driandennis.oryva.site" }],
-      "destination": "/dr-ian-dennis.html"
+      "destination": "/driandennis/:path*"
     }
   ]
 }
