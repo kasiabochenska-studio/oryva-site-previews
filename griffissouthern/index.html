@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griffis Southern Dental Care | Waycross, GA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #F7F8FA;
+            --cream-dark: #EBEDF2;
+            --terracotta: #4A5568;
+            --terracotta-light: #6B7B8F;
+            --terracotta-dark: #344050;
+            --sage: #C53030;
+            --sage-light: #E06060;
+            --charcoal: #1A202C;
+            --charcoal-light: #4A5568;
+            --warm-white: #FAFBFC;
+            --gold: #C53030;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Roboto', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.6; overflow-x: hidden; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 1000; }
+        h1, h2, h3, h4 { font-family: 'Merriweather', serif; font-weight: 400; letter-spacing: -0.02em; }
+
+        /* Navigation */
+        nav { position: fixed; top: 0; left: 0; right: 0; padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: linear-gradient(to bottom, var(--cream) 60%, transparent); transition: all 0.4s ease; }
+        nav.scrolled { background: var(--cream); box-shadow: 0 2px 20px rgba(45, 42, 38, 0.06); padding: 1rem 4rem; }
+        .logo { font-family: 'Merriweather', serif; font-size: 1.4rem; color: var(--terracotta); text-decoration: none; font-weight: 500; }
+        .logo span { color: var(--charcoal); font-weight: 300; font-style: italic; }
+        .nav-links { display: flex; gap: 3rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--charcoal); font-size: 0.95rem; font-weight: 500; position: relative; transition: color 0.3s ease; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--terracotta); transition: width 0.3s ease; }
+        .nav-links a:hover { color: var(--terracotta); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { background: var(--terracotta); color: var(--warm-white) !important; padding: 0.75rem 1.75rem; border-radius: 50px; transition: all 0.3s ease !important; }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--terracotta-dark) !important; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+
+        /* Hero */
+        .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 8rem 4rem 4rem; position: relative; overflow: hidden; }
+        .hero-content { max-width: 600px; z-index: 2; }
+        .hero h1 { font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; animation: fadeSlideUp 0.8s ease forwards; opacity: 0; }
+        .hero h1 em { color: var(--terracotta); font-style: italic; }
+        .hero-text { font-size: 1.15rem; color: var(--charcoal-light); margin-bottom: 2.5rem; max-width: 480px; animation: fadeSlideUp 0.8s ease 0.1s forwards; opacity: 0; }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeSlideUp 0.8s ease 0.2s forwards; opacity: 0; }
+        .btn-primary { background: var(--terracotta); color: var(--warm-white); padding: 1rem 2.25rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary:hover { background: var(--terracotta-dark); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        .btn-secondary { background: transparent; color: var(--charcoal); padding: 1rem 2.25rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid var(--charcoal); transition: all 0.3s ease; }
+        .btn-secondary:hover { background: var(--charcoal); color: var(--warm-white); transform: translateY(-3px); }
+        .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+        .hero-shape { width: 500px; height: 500px; background: linear-gradient(135deg, var(--terracotta-light) 0%, var(--terracotta) 50%, var(--terracotta-dark) 100%); border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; position: relative; animation: morphShape 15s ease-in-out infinite, fadeScale 1s ease forwards; opacity: 0; transform: scale(0.8); }
+        .hero-shape::before { content: ''; position: absolute; inset: -30px; border: 2px solid var(--sage-light); border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; animation: morphShapeAlt 15s ease-in-out infinite; }
+        .hero-shape::after { content: 'ð¦·'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 8rem; filter: grayscale(1) brightness(2); opacity: 0.9; }
+        .floating-card { position: absolute; background: var(--warm-white); border-radius: 20px; padding: 1.25rem 1.5rem; box-shadow: 0 15px 40px rgba(45, 42, 38, 0.1); animation: float 6s ease-in-out infinite; }
+        .floating-card.card-1 { top: 10%; right: 5%; animation-delay: 0s; }
+        .floating-card.card-2 { bottom: 15%; left: 5%; animation-delay: 2s; }
+        .floating-card .card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .floating-card .card-text { font-size: 0.85rem; font-weight: 600; color: var(--charcoal); }
+        .floating-card .card-subtext { font-size: 0.75rem; color: var(--charcoal-light); }
+        .deco-circle { position: absolute; border-radius: 50%; border: 1px solid var(--sage-light); opacity: 0.5; }
+        .deco-circle.c1 { width: 300px; height: 300px; top: 20%; left: -150px; }
+        .deco-circle.c2 { width: 200px; height: 200px; bottom: 10%; right: 10%; }
+
+        /* Services */
+        .services { padding: 8rem 4rem; background: var(--warm-white); position: relative; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label { font-size: 0.85rem; font-weight: 600; color: var(--terracotta); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; display: block; }
+        .section-title { font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 1rem; }
+        .section-subtitle { font-size: 1.1rem; color: var(--charcoal-light); max-width: 600px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .service-card { background: var(--cream); border-radius: 24px; padding: 2.5rem; position: relative; overflow: hidden; transition: all 0.4s ease; cursor: pointer; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--terracotta), var(--gold)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(45, 42, 38, 0.1); }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-icon { width: 60px; height: 60px; background: var(--terracotta-light); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin-bottom: 1.5rem; transition: all 0.3s ease; }
+        .service-card:hover .service-icon { background: var(--terracotta); transform: scale(1.1) rotate(-5deg); }
+        .service-card h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+        .service-card p { color: var(--charcoal-light); font-size: 0.95rem; line-height: 1.7; }
+
+        /* About */
+        .about { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; max-width: 1400px; margin: 0 auto; }
+        .about-image { position: relative; }
+        .about-image-main { width: 100%; aspect-ratio: 4/5; background: linear-gradient(135deg, var(--sage-light), var(--sage)); border-radius: 30px 100px 30px 100px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .about-image-main::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .doctor-placeholder { font-size: 6rem; filter: grayscale(1); opacity: 0.8; }
+        .about-accent { position: absolute; width: 200px; height: 200px; background: var(--terracotta); border-radius: 50%; bottom: -30px; right: -30px; z-index: -1; }
+        .about-content { max-width: 550px; }
+        .about-content .section-label { text-align: left; }
+        .about-content .section-title { text-align: left; margin-bottom: 1.5rem; }
+        .about-content p { color: var(--charcoal-light); font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.8; }
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+        .about-feature { display: flex; align-items: flex-start; gap: 1rem; }
+        .about-feature-icon { width: 45px; height: 45px; background: var(--cream-dark); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; }
+        .about-feature-text h4 { font-size: 1rem; font-weight: 600; font-family: 'Roboto', sans-serif; margin-bottom: 0.25rem; }
+        .about-feature-text p { font-size: 0.85rem; margin: 0; line-height: 1.5; }
+
+        /* Testimonials */
+        .testimonials { background: var(--charcoal); color: var(--warm-white); padding: 6rem 4rem; position: relative; overflow: hidden; }
+        .testimonials::before { content: '"'; font-family: 'Merriweather', serif; font-size: 30rem; position: absolute; top: -4rem; right: 5%; color: var(--charcoal-light); opacity: 0.08; line-height: 1; }
+        .testimonials-header { text-align: center; margin-bottom: 3rem; position: relative; z-index: 2; }
+        .testimonials-header .section-label { color: var(--terracotta-light); }
+        .testimonials-header .section-title { color: var(--warm-white); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+        .testimonial-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 2rem; transition: all 0.4s ease; }
+        .testimonial-card:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-5px); }
+        .testimonial-stars { color: var(--gold); font-size: 1.25rem; margin-bottom: 1rem; letter-spacing: 0.1em; }
+        .testimonial-card blockquote { font-family: 'Merriweather', serif; font-size: 1.1rem; font-weight: 300; font-style: italic; line-height: 1.6; margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.9); }
+        .testimonial-author { display: flex; align-items: center; gap: 1rem; }
+        .testimonial-avatar { width: 45px; height: 45px; background: var(--terracotta); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 600; color: var(--warm-white); }
+        .testimonial-info { text-align: left; }
+        .testimonial-name { font-weight: 600; font-size: 1rem; }
+        .testimonial-source { font-size: 0.8rem; opacity: 0.6; }
+
+        /* Contact */
+        .contact { padding: 8rem 4rem; background: var(--cream-dark); }
+        .contact-wrapper { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
+        .contact-info h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.5rem; }
+        .contact-info h2 em { color: var(--terracotta); font-style: italic; }
+        .contact-info > p { color: var(--charcoal-light); font-size: 1.1rem; margin-bottom: 3rem; line-height: 1.7; }
+        .contact-details { display: flex; flex-direction: column; gap: 1.5rem; }
+        .contact-item { display: flex; align-items: flex-start; gap: 1rem; }
+        .contact-icon { width: 50px; height: 50px; background: var(--terracotta); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; }
+        .contact-text h4 { font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal-light); margin-bottom: 0.25rem; }
+        .contact-text p, .contact-text a { font-size: 1.1rem; color: var(--charcoal); text-decoration: none; transition: color 0.3s ease; }
+        .contact-text a:hover { color: var(--terracotta); }
+        .contact-map { background: var(--warm-white); border-radius: 30px; overflow: hidden; box-shadow: 0 20px 50px rgba(45, 42, 38, 0.1); }
+        .map-placeholder { height: 300px; background: linear-gradient(135deg, var(--sage-light) 0%, var(--sage) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; position: relative; overflow: hidden; }
+        .map-placeholder .map-pin { font-size: 3rem; animation: bounce 2s ease-in-out infinite; }
+        .map-placeholder p { background: var(--warm-white); padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 500; font-size: 0.9rem; }
+        .map-details { padding: 2rem; }
+        .map-details h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .map-details p { color: var(--charcoal-light); margin-bottom: 1.5rem; }
+        .directions-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--charcoal); color: var(--warm-white); padding: 0.875rem 1.75rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .directions-btn:hover { background: var(--terracotta); transform: translateY(-2px); }
+
+        /* Footer */
+        footer { background: var(--charcoal); color: var(--warm-white); padding: 4rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+        .footer-brand .logo { color: var(--terracotta-light); font-size: 1.6rem; margin-bottom: 0.5rem; display: block; }
+        .footer-brand .logo span { color: var(--warm-white); }
+        .footer-brand p { opacity: 0.7; font-size: 0.9rem; }
+        .footer-links { display: flex; gap: 2rem; }
+        .footer-links a { color: var(--warm-white); text-decoration: none; opacity: 0.7; transition: opacity 0.3s ease; font-size: 0.95rem; }
+        .footer-links a:hover { opacity: 1; }
+        .footer-social { display: flex; gap: 1rem; }
+        .footer-social a { width: 45px; height: 45px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--warm-white); text-decoration: none; font-size: 1.25rem; transition: all 0.3s ease; }
+        .footer-social a:hover { background: var(--terracotta); transform: translateY(-3px); }
+
+        /* Animations */
+        @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeScale { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+        @keyframes morphShape { 0%, 100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 25% { border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%; } 50% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 75% { border-radius: 60% 40% 50% 50% / 35% 55% 45% 65%; } }
+        @keyframes morphShapeAlt { 0%, 100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 25% { border-radius: 50% 50% 40% 60% / 40% 60% 40% 60%; } 50% { border-radius: 38% 62% 54% 46% / 60% 30% 70% 40%; } 75% { border-radius: 55% 45% 60% 40% / 50% 45% 55% 50%; } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav { padding: 1rem 2rem; }
+            .hero { grid-template-columns: 1fr; text-align: center; padding: 7rem 2rem 4rem; }
+            .hero-content { max-width: 100%; }
+            .hero-text { margin: 0 auto 2.5rem; }
+            .hero-buttons { justify-content: center; }
+            .hero-visual { margin-top: 3rem; }
+            .hero-shape { width: 350px; height: 350px; }
+            .about { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
+            .about-content { text-align: center; }
+            .about-content .section-label, .about-content .section-title { text-align: center; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .services { padding: 4rem 2rem; }
+            .contact { padding: 4rem 2rem; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .floating-card { display: none; }
+            .about-features { grid-template-columns: 1fr; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">Griffis <span>Southern Dental Care</span></a>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="nav-cta">Call Now</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="deco-circle c1"></div>
+        <div class="deco-circle c2"></div>
+        <div class="hero-content">
+            <h1>Your Smile Deserves <em>Southern</em> Care</h1>
+            <p class="hero-text">Dr. Grayson Griffis and our team bring true Southern hospitality to dental care in Waycross. As a USMC veteran-friendly practice, we take the time to explain, listen, and deliver the professional care you deserve.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary"><span>ð</span> Schedule a Visit</a>
+                <a href="#services" class="btn-secondary">Our Services</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-shape"></div>
+            <div class="floating-card card-1">
+                <div class="card-icon">ðï¸</div>
+                <div class="card-text">Veteran Friendly</div>
+                <div class="card-subtext">USMC proud</div>
+            </div>
+            <div class="floating-card card-2">
+                <div class="card-icon">ð¤</div>
+                <div class="card-text">Southern Hospitality</div>
+                <div class="card-subtext">We never rush</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header reveal">
+            <span class="section-label">What We Offer</span>
+            <h2 class="section-title">Comprehensive Dental Care</h2>
+            <p class="section-subtitle">From preventive care to cosmetic enhancements, we provide a full range of services to keep your smile healthy and beautiful.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal"><div class="service-icon">ð¦·</div><h3>General Dentistry</h3><p>Regular exams, cleanings, fillings, and preventive care to maintain your oral health and catch issues early.</p></div>
+            <div class="service-card reveal"><div class="service-icon">â¨</div><h3>Cosmetic Dentistry</h3><p>Whitening, veneers, and bonding to enhance your smile's appearance and boost your confidence.</p></div>
+            <div class="service-card reveal"><div class="service-icon">ð¶</div><h3>Pediatric Care</h3><p>Gentle, kid-friendly dental care in a warm environment that makes children feel comfortable and safe.</p></div>
+            <div class="service-card reveal"><div class="service-icon">ð§</div><h3>Restorative Care</h3><p>Crowns, bridges, and implants to restore damaged or missing teeth and bring back your full smile.</p></div>
+            <div class="service-card reveal"><div class="service-icon">ð¡ï¸</div><h3>Emergency Services</h3><p>Prompt care when you need it most. Contact us for urgent dental issues and same-day appointments.</p></div>
+            <div class="service-card reveal"><div class="service-icon">ð´</div><h3>Sedation Options</h3><p>Comfortable sedation dentistry for patients with anxiety, ensuring a stress-free experience.</p></div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-image reveal">
+            <div class="about-image-main"><span class="doctor-placeholder">ð©ââï¸</span></div>
+            <div class="about-accent"></div>
+        </div>
+        <div class="about-content reveal">
+            <span class="section-label">Meet Your Dentist</span>
+            <h2 class="section-title">Dr. Grayson Griffis</h2>
+            <p>Dr. Grayson Griffis leads a team that believes in true Southern hospitality â taking the time to explain every procedure, answer every question, and never rushing through your visit.</p>
+            <p>As a veteran-friendly practice, we understand the value of service, respect, and professionalism. Our knowledgeable team delivers the kind, thorough dental care the Waycross community deserves.</p>
+            <div class="about-features">
+                    <div class="about-feature">
+                        <div class="about-feature-icon">ðï¸</div>
+                        <div class="about-feature-text">
+                            <h4>Veteran Friendly</h4>
+                            <p>USMC-proud, serving those who served</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">â°</div>
+                        <div class="about-feature-text">
+                            <h4>Never Rushed</h4>
+                            <p>We take time to explain</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">ð§ </div>
+                        <div class="about-feature-text">
+                            <h4>Knowledgeable</h4>
+                            <p>Expert clinical care</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">ð</div>
+                        <div class="about-feature-text">
+                            <h4>Kind & Professional</h4>
+                            <p>Respect in every interaction</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="testimonials-header reveal">
+            <span class="section-label">What Our Patients Say</span>
+            <h2 class="section-title">Real Reviews</h2>
+        </div>
+        <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">âââââ</div>
+                    <blockquote>Dr. Griffis takes time to explain â doesn't rush.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">P</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Patient</div>
+                            <div class="testimonial-source">Facebook Review</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">âââââ</div>
+                    <blockquote>As a nurse, I found him very knowledgeable.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">P</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Patient</div>
+                            <div class="testimonial-source">Facebook Review</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">âââââ</div>
+                    <blockquote>Most professional and kind staff around.</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">P</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Patient</div>
+                            <div class="testimonial-source">Facebook Review</div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-wrapper">
+            <div class="contact-info reveal">
+                <h2>Let's Get You <em>Smiling</em></h2>
+                <p>Ready to experience dentistry with a personal touch? We'd love to welcome you and your family to our practice.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">ð</div>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>Waycross, GA 31501</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">ð</div>
+                        <div class="contact-text">
+                            <h4>Find Us Online</h4>
+                            <a href="https://www.facebook.com/DrGraysonGriffis/" target="_blank">Visit our Facebook page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-map reveal">
+                <div class="map-placeholder">
+                    <span class="map-pin">ð</span>
+                    <p>Waycross, GA</p>
+                </div>
+                <div class="map-details">
+                    <h3>Griffis Southern Dental Care</h3>
+                    <p>Proudly serving the Waycross, GA community.</p>
+                    <a href="https://maps.google.com/?q=Waycross+GA+31501" target="_blank" class="directions-btn">Get Directions â</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">Griffis <span>Southern Dental Care</span></a>
+                <p>Your trusted dentist in Waycross, GA</p>
+            </div>
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/DrGraysonGriffis/" target="_blank" aria-label="Facebook">ð</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => { if (window.scrollY > 50) { nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); } });
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => { reveals.forEach(el => { const wh = window.innerHeight; const et = el.getBoundingClientRect().top; if (et < wh - 150) { el.classList.add('active'); } }); };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+        document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', function(e) { e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); });
+    </script>
+</body>
+</html>
