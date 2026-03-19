@@ -15,40 +15,54 @@ oryva-site-previews/
 └── <slug>/index.html    ← każda subdomena = folder z jednym plikiem HTML
 ```
 
-## Tworzenie nowej subdomeny — pełny flow
+## Jak triggerować
 
-### 1. Dane wejściowe
+Użytkownik mówi np.:
+- "Zrób preview dla HOT leadów z Pipeline Master"
+- "Zrób preview dla ORYVA-RZE-013"
+- "Zrób preview dla wszystkich nowych z outreach"
 
-Dane pochodzą z `Oryva_Pipeline_Master.xlsx` (Google Drive → ORYVA), sheet `5_Outreach`.
+Claude wykonuje pełny flow od A do Z (kroki 1–7 poniżej) dla każdego wskazanego rekordu.
+
+---
+
+## Pełny flow — krok po kroku
+
+### 1. Odczytaj dane z Pipeline Master
+
 Ścieżka: `/Users/kasiabochenska/Library/CloudStorage/GoogleDrive-hello@oryva.site/My Drive/ORYVA/Oryva_Pipeline_Master.xlsx`
 
-Kluczowe kolumny (uwaga: rząd 2 ma inne nagłówki niż rząd 1, dane zaczynają się od rzędu 3):
-- **B** Nazwa firmy → generuje slug subdomeny
+Odczytaj dane leada z wielu sheetów (użyj openpyxl, matchuj po kolumnie A = ID):
+
+**Sheet `5_Outreach`** (uwaga: rząd 2 ma inne nagłówki niż rząd 1, dane od rzędu 3):
+- **A** ID
+- **B** Nazwa firmy → generuje slug
 - **C** Email
 - **D** Segment (HOT/WARM)
+- **E** Ścieżka
 - **F** Persona
 - **G** Score
 - **I** Temat email
-- **J** Preview HTML ← tu wpisujemy `<slug>.oryva.site`
+- **J** Preview HTML ← tu wpisujemy docelowy link na końcu
 
-Dodatkowe dane z innych sheetów:
-- `1_RAW_Scraping`: Branża, Miasto, Adres, Telefon, Strona WWW, Ocena Google, Ile recenzji, Opis GBP, Social media
-- `3_Segmentacja`: Kluczowe problemy, Priorytet outreach
+**Sheet `1_RAW_Scraping`** (dane od rzędu 2):
+- Branża, Miasto, Adres, Telefon, Strona WWW, Ocena Google, Ile recenzji, Opis GBP, Godziny otwarcia, Social media
 
-### 2. Generowanie slugu
+**Sheet `3_Segmentacja`**:
+- Kluczowe problemy, Priorytet outreach
 
-Slug tworzymy automatycznie z nazwy firmy:
+### 2. Wygeneruj slug
+
+Z nazwy firmy:
 - Usuń polskie znaki (ł→l, ś→s, ą→a, ć→c, ę→e, ń→n, ó→o, ż→z, ź→z)
 - Usuń słowa: salon, studio, gabinet, spa, beauty, dr, med, lek
 - Lowercase, usuń spacje i znaki specjalne (|, -, ., etc.)
 - Przykłady:
   - "Anna Majkowska Salon Beauty" → `annamajkowska`
   - "Nefretete | Babor Beauty Spa" → `nefretete`
-  - "Dr. Kowalski Stomatologia" → `kowalski`
   - "M Studio" → `mstudio`
-  - "Aspire Family Dentistry" → `aspirefamilydentistry`
 
-### 3. Tworzenie strony
+### 3. Stwórz stronę preview
 
 1. Utwórz folder `<slug>/`
 2. Utwórz `<slug>/index.html` — samodzielny plik HTML
@@ -68,7 +82,7 @@ Wymagania techniczne:
   </script>
   ```
 
-Struktura strony:
+Struktura strony (dopasuj do branży i persony):
 - Hero section z CTA
 - Sekcja usług (dopasowana do branży)
 - Sekcja o firmie/właścicielu
@@ -84,7 +98,7 @@ Styl:
 - Alternujące tła sekcji
 - Scroll animations (IntersectionObserver)
 
-### 4. Dodanie rewrite do vercel.json
+### 4. Dodaj rewrite do vercel.json
 
 Dodaj nowy wpis na końcu tablicy `rewrites`:
 ```json
@@ -103,13 +117,47 @@ Dodaj nowy wpis na końcu tablicy `rewrites`:
 ### 5. Commit i push
 
 - Format commita: `add <slug> preview for <Nazwa firmy>`
-- Push to main → Vercel auto-deploy (wildcard *.oryva.site jest skonfigurowany)
-- **Nie trzeba ręcznie dodawać domeny w Vercelu** — wildcard obsługuje wszystkie subdomeny
+- Przy wielu naraz: `add previews for <firma1>, <firma2>, ...`
+- Push to main → Vercel auto-deploy
+- **Nie trzeba ręcznie dodawać domeny** — wildcard obsługuje wszystkie subdomeny
 
-### 6. Aktualizacja Pipeline Master
+### 6. Wygeneruj/zaktualizuj cold mail
 
-Po pushu zaktualizuj `Oryva_Pipeline_Master.xlsx`:
-- Sheet `5_Outreach` → kolumna **J** (Preview HTML) → wpisz `<slug>.oryva.site`
+Folder outreach: `/Users/kasiabochenska/Library/CloudStorage/GoogleDrive-hello@oryva.site/My Drive/ORYVA/outreach_{data}/`
+(gdzie `{data}` = dzisiejsza data YYYY-MM-DD)
+
+Plik: `mail_{slug}.txt`
+
+W treści maila **zamiast "podgląd w załączniku"** użyj live linku:
+
+```
+Przygotowaliśmy dla Pani/Pana gotowy podgląd nowej strony — bez żadnych zobowiązań:
+
+👉 https://<slug>.oryva.site
+
+Wystarczy kliknąć w link, żeby zobaczyć jak mogłaby wyglądać Pani/Pana nowoczesna strona internetowa.
+```
+
+Dopasuj ton maila do:
+- **Persona** (Invisible Craftsman, Frustrated Modernizer, etc.)
+- **Segment** (HOT = bardziej bezpośredni, WARM = edukacyjny)
+- **Branża i dane** (Ocena Google, ile recenzji, opis GBP)
+
+### 7. Zaktualizuj Pipeline Master
+
+Sheet `5_Outreach` → kolumna **J** (Preview HTML) → wpisz `<slug>.oryva.site`
+
+---
+
+## Weryfikacja po deployu
+
+Po pushu sprawdź czy subdomena działa:
+```bash
+curl -s -o /dev/null -w "%{http_code}" https://<slug>.oryva.site
+```
+Oczekiwany kod: `200`
+
+---
 
 ## Zasady
 
@@ -117,4 +165,4 @@ Po pushu zaktualizuj `Oryva_Pipeline_Master.xlsx`:
 - **Nie zmieniaj** Google Analytics ID (G-7YLE4F3MMN)
 - **Nie dodawaj** build stepów, bundlerów ani frameworków — to statyczne pliki HTML
 - Każdy `index.html` musi działać samodzielnie po otwarciu w przeglądarce
-- Przy tworzeniu wielu preview na raz, przetwarzaj je sekwencyjnie (jeden folder + rewrite per lead)
+- Przy wielu preview: przetwarzaj sekwencyjnie, jeden commit na końcu z wszystkimi naraz
