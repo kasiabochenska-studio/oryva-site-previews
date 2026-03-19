@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YLE4F3MMN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7YLE4F3MMN');
+    </script>
+    <title>Salon Beauty Anna Majkowska — Rzeszów</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --cream: #FDFBF7;
+            --cream-dark: #F5EDE3;
+            --rose: #C9A88C;
+            --rose-light: #F0E2D4;
+            --brown: #2D1810;
+            --brown-mid: #5C3D2E;
+            --brown-light: #8B6F5E;
+            --white: #FFFFFF;
+            --text-body: #5C4A3A;
+            --border: #E8DDD0;
+
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-body);
+            background-color: var(--cream);
+            line-height: 1.7;
+            font-weight: 400;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            color: var(--brown);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ─── NAVIGATION ─── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--brown);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span {
+            font-weight: 400;
+            font-style: italic;
+            color: var(--brown-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--brown-mid);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--brown); }
+
+        .nav-cta {
+            display: inline-block;
+            background: var(--brown);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 3px;
+            font-size: 12px !important;
+            letter-spacing: 0.1em !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--brown-mid) !important;
+            transform: translateY(-1px);
+        }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+
+        .nav-hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--brown);
+            transition: all 0.3s;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            padding-top: 72px;
+            min-height: 100dvh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--cream);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px 80px 0;
+            margin-left: auto;
+            max-width: 600px;
+            width: 100%;
+            padding-left: 24px;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            width: fit-content;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--rose);
+            background: var(--rose-light);
+            padding: 6px 16px;
+            border-radius: 2px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5vw, 62px);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            color: var(--brown);
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--rose);
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: var(--brown-light);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 440px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--brown);
+            color: var(--white);
+            padding: 16px 36px;
+            border: none;
+            border-radius: 3px;
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-primary:hover {
+            background: #1a0f0a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(45, 24, 16, 0.15);
+        }
+
+        .btn-secondary {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--brown-mid);
+            letter-spacing: 0.04em;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2px;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            color: var(--brown);
+            border-color: var(--brown);
+        }
+
+        .hero-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            height: 100%;
+            min-height: 100dvh;
+        }
+
+        /* ─── ABOUT SECTION ─── */
+        .about {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+        }
+
+        .section-eyebrow {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--rose);
+            margin-bottom: 16px;
+        }
+
+        .about h2 {
+            font-size: clamp(32px, 3.5vw, 46px);
+            margin-bottom: 28px;
+            letter-spacing: -0.01em;
+        }
+
+        .about p {
+            margin-bottom: 20px;
+            color: var(--text-body);
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--brown);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--brown-light);
+        }
+
+        /* ─── SERVICES ─── */
+        .services {
+            padding: 120px 0;
+            background: var(--cream);
+        }
+
+        .services-header {
+            text-align: center;
+            max-width: 560px;
+            margin: 0 auto 64px;
+        }
+
+        .services-header h2 {
+            font-size: clamp(32px, 3.5vw, 46px);
+            margin-bottom: 20px;
+        }
+
+        .services-header p {
+            color: var(--brown-light);
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(45, 24, 16, 0.08);
+        }
+
+        .service-card-image {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .service-card-image img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-card:hover .service-card-image img {
+            transform: scale(1.05);
+        }
+
+        .service-card-body {
+            padding: 28px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: var(--brown-light);
+            line-height: 1.7;
+        }
+
+        /* ─── PHILOSOPHY ─── */
+        .philosophy {
+            padding: 120px 0;
+            background: var(--brown);
+            color: var(--cream);
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .philosophy .section-eyebrow { color: var(--rose); }
+
+        .philosophy h2 {
+            color: var(--cream);
+            font-size: clamp(32px, 3.5vw, 46px);
+            margin-bottom: 28px;
+        }
+
+        .philosophy p {
+            color: rgba(253, 251, 247, 0.75);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .philosophy-features {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .philosophy-feature {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .philosophy-feature-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: rgba(201, 168, 140, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .philosophy-feature-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--rose);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .philosophy-feature h4 {
+            color: var(--cream);
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .philosophy-feature p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        /* ─── TESTIMONIALS ─── */
+        .testimonials {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .testimonials-header {
+            text-align: center;
+            max-width: 560px;
+            margin: 0 auto 64px;
+        }
+
+        .testimonials-header h2 {
+            font-size: clamp(32px, 3.5vw, 46px);
+            margin-bottom: 20px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--cream);
+            border-radius: 4px;
+            padding: 36px;
+            border: 1px solid var(--border);
+        }
+
+        .testimonial-stars {
+            color: #D4A574;
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-style: italic;
+            color: var(--brown);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-author {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--brown);
+            letter-spacing: 0.02em;
+        }
+
+        .testimonial-source {
+            font-size: 12px;
+            color: var(--brown-light);
+            margin-top: 2px;
+        }
+
+        /* ─── BOOKING CTA ─── */
+        .booking {
+            padding: 120px 0;
+            background: var(--cream);
+        }
+
+        .booking-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .booking h2 {
+            font-size: clamp(32px, 3.5vw, 46px);
+            margin-bottom: 20px;
+        }
+
+        .booking p {
+            color: var(--brown-light);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .booking-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .booking-info-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .booking-info-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--rose-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .booking-info-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--brown-mid);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .booking-info-text h4 {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--brown);
+            margin-bottom: 2px;
+        }
+
+        .booking-info-text p {
+            font-size: 14px;
+            color: var(--brown-light);
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        .booking-image {
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+        }
+
+        /* ─── FOOTER ─── */
+        .footer {
+            background: var(--brown);
+            color: rgba(253, 251, 247, 0.7);
+            padding: 80px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 48px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(253, 251, 247, 0.1);
+        }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 16px;
+        }
+
+        .footer-brand span {
+            font-weight: 400;
+            font-style: italic;
+            color: var(--rose);
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 280px;
+        }
+
+        .footer h4 {
+            font-family: var(--font-body);
+            color: var(--cream);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: var(--cream); }
+
+        .footer-hours {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .footer-hours-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+
+        .footer-hours-row span:first-child { color: rgba(253, 251, 247, 0.5); }
+
+        .footer-bottom {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        .footer-bottom a {
+            color: var(--rose);
+            transition: color 0.3s;
+        }
+
+        .footer-bottom a:hover { color: var(--cream); }
+
+        /* ─── MOBILE ─── */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(253, 251, 247, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 99;
+            padding: 40px 24px;
+        }
+
+        .mobile-menu.active { display: block; }
+
+        .mobile-menu a {
+            display: block;
+            font-size: 18px;
+            font-family: var(--font-display);
+            color: var(--brown);
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; min-height: auto; }
+            .hero-content {
+                padding: 100px 24px 60px;
+                max-width: 100%;
+                margin: 0;
+            }
+            .hero-image { aspect-ratio: 16/9; height: 50vh; }
+            .hero-image img { min-height: auto; }
+            .about-grid, .philosophy-grid, .booking-inner { grid-template-columns: 1fr; gap: 40px; }
+            .services-grid, .testimonials-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .about-stats { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+            .stat-number { font-size: 28px; }
+            .hero h1 { font-size: 36px; }
+        }
+
+        /* ─── ANIMATIONS ─── */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Anna Majkowska <span>Beauty</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">O mnie</a></li>
+                <li><a href="#services">Usługi</a></li>
+                <li><a href="#philosophy">Filozofia</a></li>
+                <li><a href="#testimonials">Opinie</a></li>
+                <li><a href="#booking" class="nav-cta">Umów wizytę</a></li>
+            </ul>
+            <button class="nav-hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="#about" onclick="this.parentElement.classList.remove('active')">O mnie</a>
+        <a href="#services" onclick="this.parentElement.classList.remove('active')">Usługi</a>
+        <a href="#philosophy" onclick="this.parentElement.classList.remove('active')">Filozofia</a>
+        <a href="#testimonials" onclick="this.parentElement.classList.remove('active')">Opinie</a>
+        <a href="#booking" onclick="this.parentElement.classList.remove('active')">Umów wizytę</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow">Salon Beauty — Rzeszów</div>
+            <h1>Piękno zaczyna się od <em>profesjonalnej</em> pielęgnacji</h1>
+            <p class="hero-subtitle">Salon kosmetyczny z wieloletnim doświadczeniem w stylizacji paznokci, pielęgnacji skóry i zabiegach upiększających. Zaufało nam już ponad 500 klientek z Rzeszowa i okolic.</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn-primary">Umów wizytę</a>
+                <a href="#services" class="btn-secondary">Zobacz usługi</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=1100&fit=crop&crop=center" alt="Salon kosmetyczny - profesjonalny zabieg pielęgnacyjny" loading="eager">
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&h=900&fit=crop" alt="Anna Majkowska - właścicielka salonu beauty">
+                </div>
+                <div class="animate-on-scroll delay-1">
+                    <div class="section-eyebrow">O mnie</div>
+                    <h2>Pasja do piękna to moje codzienne życie</h2>
+                    <p>Jestem Anna Majkowska — kosmetyczka i stylistka paznokci z wieloletnią praktyką. Od lat pomagam kobietom w Rzeszowie poczuć się pięknie i pewnie. Moja praca to nie tylko zabiegi — to budowanie zaufania i dbanie o każdy detal.</p>
+                    <p>W moim salonie stawiam na indywidualne podejście, najwyższą jakość produktów i ciepłą, relaksującą atmosferę. Każda klientka jest dla mnie wyjątkowa.</p>
+                    <div class="about-stats">
+                        <div>
+                            <div class="stat-number">4.7</div>
+                            <div class="stat-label">Ocena Google</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">54</div>
+                            <div class="stat-label">Opinii</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Klientek</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="services-header animate-on-scroll">
+                <div class="section-eyebrow">Usługi</div>
+                <h2>Kompleksowa oferta zabiegów</h2>
+                <p>Od stylizacji paznokci po zaawansowane zabiegi pielęgnacyjne — wszystko w jednym miejscu, wykonywane z najwyższą starannością.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=450&fit=crop" alt="Stylizacja paznokci żelowych">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Paznokcie żelowe</h3>
+                        <p>Trwała i elegancka stylizacja paznokci żelowych. Naturalne przedłużenie lub rekonstrukcja — dopasowane do Twojego stylu.</p>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll delay-1">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=600&h=450&fit=crop" alt="Manicure hybrydowy">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Manicure hybrydowy</h3>
+                        <p>Piękne, trwałe kolory do trzech tygodni. Wykonywany z dbałością o płytkę paznokcia, z użyciem najlepszych lakierów.</p>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll delay-2">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=450&fit=crop" alt="Zabiegi kosmetyczne na twarz">
+                    </div>
+                    <div class="service-card-body">
+                        <h3>Kosmetyka twarzy</h3>
+                        <p>Oczyszczanie, nawilżanie, liftingi i peelingi. Dobieramy zabiegi indywidualnie, aby Twoja skóra promiennie wyglądała.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section id="philosophy" class="philosophy">
+        <div class="container">
+            <div class="philosophy-grid">
+                <div class="animate-on-scroll">
+                    <div class="section-eyebrow">Dlaczego my</div>
+                    <h2>Każdy detal ma znaczenie</h2>
+                    <p>W Salonie Beauty Anna Majkowska wierzymy, że prawdziwe piękno to suma precyzji, jakości i troski. Dlatego nie idziemy na skróty.</p>
+                </div>
+                <div class="philosophy-features animate-on-scroll delay-1">
+                    <div class="philosophy-feature">
+                        <div class="philosophy-feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Najwyższa jakość produktów</h4>
+                            <p>Pracuję wyłącznie na sprawdzonych, renomowanych markach. Żadnych kompromisów — Twoje paznokcie i skóra zasługują na najlepsze.</p>
+                        </div>
+                    </div>
+                    <div class="philosophy-feature">
+                        <div class="philosophy-feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Indywidualne podejście</h4>
+                            <p>Każda klientka jest inna. Słucham Twoich potrzeb i doradzam najlepsze rozwiązania — bez pośpiechu, z pełnym zaangażowaniem.</p>
+                        </div>
+                    </div>
+                    <div class="philosophy-feature">
+                        <div class="philosophy-feature-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div>
+                            <h4>Punktualność i higiena</h4>
+                            <p>Szanuję Twój czas i dbam o sterylność. Wszystkie narzędzia są dezynfekowane i sterylizowane po każdej klientce.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="testimonials-header animate-on-scroll">
+                <div class="section-eyebrow">Opinie klientek</div>
+                <h2>Zaufały mi już setki kobiet</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"Najlepszy salon w Rzeszowie! Paznokcie żelowe trzymają się idealnie, a Pani Anna jest niesamowicie precyzyjna i miła. Polecam każdej kobiecie."</p>
+                    <div class="testimonial-author">Marta K.</div>
+                    <div class="testimonial-source">Opinia z Google Maps</div>
+                </div>
+                <div class="testimonial-card animate-on-scroll delay-1">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"Chodzę do Pani Ani od dwóch lat i nigdy się nie zawiodłam. Zawsze na czas, zawsze piękny efekt, zawsze miła atmosfera. To moje miejsce na relaks!"</p>
+                    <div class="testimonial-author">Katarzyna W.</div>
+                    <div class="testimonial-source">Opinia z Google Maps</div>
+                </div>
+                <div class="testimonial-card animate-on-scroll delay-2">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"Super profesjonalizm! Zabieg na twarz był niesamowity — skóra wyglądała pięknie przez wiele dni. Na pewno wrócę na kolejne zabiegi."</p>
+                    <div class="testimonial-author">Agnieszka L.</div>
+                    <div class="testimonial-source">Opinia z Booksy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING CTA -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="booking-inner">
+                <div class="animate-on-scroll">
+                    <div class="section-eyebrow">Kontakt</div>
+                    <h2>Umów wizytę już dziś</h2>
+                    <p>Chętnie Cię przyjmę w moim salonie w Rzeszowie. Zadzwoń, napisz lub zarezerwuj wizytę przez Booksy — znajdziemy idealny termin.</p>
+                    <div class="booking-info">
+                        <div class="booking-info-item">
+                            <div class="booking-info-icon">
+                                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div class="booking-info-text">
+                                <h4>Adres</h4>
+                                <p>Rzeszów, woj. podkarpackie</p>
+                            </div>
+                        </div>
+                        <div class="booking-info-item">
+                            <div class="booking-info-icon">
+                                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div class="booking-info-text">
+                                <h4>Telefon</h4>
+                                <p>Zadzwoń i umów wizytę</p>
+                            </div>
+                        </div>
+                        <div class="booking-info-item">
+                            <div class="booking-info-icon">
+                                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            </div>
+                            <div class="booking-info-text">
+                                <h4>Godziny otwarcia</h4>
+                                <p>Pon–Pt: 9:00–18:00<br>Sob: 9:00–14:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 36px;">
+                        <a href="#" class="btn-primary">Rezerwuj przez Booksy</a>
+                    </div>
+                </div>
+                <div class="booking-image animate-on-scroll delay-1">
+                    <img src="https://images.unsplash.com/photo-1633681122956-0f16e1123e78?w=700&h=900&fit=crop" alt="Wnętrze salonu kosmetycznego">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Anna Majkowska <span>Beauty</span></div>
+                    <p class="footer-desc">Salon kosmetyczny w Rzeszowie. Profesjonalna stylizacja paznokci, zabiegi pielęgnacyjne i kompleksowa dbałość o Twoje piękno.</p>
+                </div>
+                <div>
+                    <h4>Nawigacja</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">O mnie</a></li>
+                        <li><a href="#services">Usługi</a></li>
+                        <li><a href="#philosophy">Dlaczego my</a></li>
+                        <li><a href="#testimonials">Opinie</a></li>
+                        <li><a href="#booking">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Usługi</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Paznokcie żelowe</a></li>
+                        <li><a href="#services">Manicure hybrydowy</a></li>
+                        <li><a href="#services">Kosmetyka twarzy</a></li>
+                        <li><a href="#services">Pedicure</a></li>
+                        <li><a href="#services">Henna brwi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Godziny otwarcia</h4>
+                    <div class="footer-hours">
+                        <div class="footer-hours-row">
+                            <span>Poniedziałek</span><span>9:00 – 18:00</span>
+                        </div>
+                        <div class="footer-hours-row">
+                            <span>Wtorek</span><span>9:00 – 18:00</span>
+                        </div>
+                        <div class="footer-hours-row">
+                            <span>Środa</span><span>9:00 – 18:00</span>
+                        </div>
+                        <div class="footer-hours-row">
+                            <span>Czwartek</span><span>9:00 – 18:00</span>
+                        </div>
+                        <div class="footer-hours-row">
+                            <span>Piątek</span><span>9:00 – 18:00</span>
+                        </div>
+                        <div class="footer-hours-row">
+                            <span>Sobota</span><span>9:00 – 14:00</span>
+                        </div>
+                        <div class="footer-hours-row">
+                            <span>Niedziela</span><span>Zamknięte</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Salon Beauty Anna Majkowska. Wszelkie prawa zastrzeżone.</span>
+                <span>Strona stworzona przez <a href="https://oryva.pl">Oryva</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            const scrollY = window.scrollY;
+            if (scrollY > 100) {
+                nav.style.boxShadow = '0 4px 20px rgba(45, 24, 16, 0.06)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+            lastScroll = scrollY;
+        }, { passive: true });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

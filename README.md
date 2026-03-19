@@ -1,2 +1,2 @@
-# Dentist Websites
-Multi-tenant dental practice websites deployed on Vercel.
+# Oryva Site Previews
+Multi-tenant preview websites deployed on Vercel as `*.oryva.site` subdomains.

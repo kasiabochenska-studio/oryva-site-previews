@@ -79,6 +79,16 @@
         }
       ],
       "destination": "/griffissouthern/index.html"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "annamajkowska.oryva.site"
+        }
+      ],
+      "destination": "/annamajkowska/index.html"
     }
   ]
 }
