@@ -32,20 +32,34 @@ Claude wykonuje pełny flow od A do Z (kroki 1–7 poniżej) dla każdego wskaza
 
 Ścieżka: `/Users/kasiabochenska/Library/CloudStorage/GoogleDrive-hello@oryva.site/My Drive/ORYVA/Oryva_Pipeline_Master.xlsx`
 
-Odczytaj dane leada z wielu sheetów (użyj openpyxl, matchuj po kolumnie A = ID):
+Odczytaj dane leada z wielu sheetów (użyj openpyxl, matchuj po kolumnie H = ID w `5_Outreach`):
 
-**Sheet `5_Outreach`** (uwaga: rząd 2 ma inne nagłówki niż rząd 1, dane od rzędu 3):
-- **A** ID
-- **B** Nazwa firmy → generuje slug
-- **C** Email
-- **D** Segment (HOT/WARM)
-- **E** Ścieżka
-- **F** Persona
-- **G** Score
-- **I** Temat email
-- **J** Preview HTML ← tu wpisujemy docelowy link na końcu
+**Sheet `5_Outreach`** (dane od rzędu 2):
 
-**Sheet `1_RAW_Scraping`** (dane od rzędu 2):
+Kolumny A–G są kompatybilne z Google Sheets cold email senderem (można kopiować 1:1):
+| Kolumna | Nagłówek | Opis |
+|---------|----------|------|
+| **A** | Email | adres email kontaktu |
+| **B** | Imię | imię osoby kontaktowej |
+| **C** | Firma | nazwa firmy |
+| **D** | Temat | temat maila |
+| **E** | Treść maila (HTML) | pełna treść z linkiem do preview |
+| **F** | Follow-up 1 (HTML) | treść pierwszego follow-upu |
+| **G** | Follow-up 2 (HTML) | treść drugiego follow-upu |
+
+Kolumny H–O to dane pipeline'owe:
+| Kolumna | Nagłówek | Opis |
+|---------|----------|------|
+| **H** | ID | np. ORYVA-RZE-013 |
+| **I** | Segment | HOT / WARM |
+| **J** | Ścieżka | A (email z analizą) / B (Shock & Awe) |
+| **K** | Persona | Invisible Craftsman / Frustrated Modernizer |
+| **L** | Score | 0–100 |
+| **M** | Preview URL | `<slug>.oryva.site` ← tu wpisz po deployu |
+| **N** | Status | Przygotowano / Wysłano / Odpowiedź |
+| **O** | Data wysyłki | YYYY-MM-DD |
+
+**Sheet `1_RAW_Scraping`** (dane od rzędu 2, matchuj po ID w kolumnie A):
 - Branża, Miasto, Adres, Telefon, Strona WWW, Ocena Google, Ile recenzji, Opis GBP, Godziny otwarcia, Social media
 
 **Sheet `3_Segmentacja`**:
@@ -121,31 +135,29 @@ Dodaj nowy wpis na końcu tablicy `rewrites`:
 - Push to main → Vercel auto-deploy
 - **Nie trzeba ręcznie dodawać domeny** — wildcard obsługuje wszystkie subdomeny
 
-### 6. Wygeneruj/zaktualizuj cold mail
+### 6. Wygeneruj treść maila i wpisz do Pipeline Master
 
-Folder outreach: `/Users/kasiabochenska/Library/CloudStorage/GoogleDrive-hello@oryva.site/My Drive/ORYVA/outreach_{data}/`
-(gdzie `{data}` = dzisiejsza data YYYY-MM-DD)
+Wszystko trafia bezpośrednio do sheetu `5_Outreach` w Pipeline Master (openpyxl).
 
-Plik: `mail_{slug}.txt`
+Dla każdego leada wypełnij:
+- **E** (Treść maila HTML) — pełna treść maila z linkiem `https://<slug>.oryva.site`
+- **F** (Follow-up 1 HTML) — pierwszy follow-up (po 3 dniach)
+- **G** (Follow-up 2 HTML) — drugi follow-up (po 7 dniach)
+- **M** (Preview URL) — `<slug>.oryva.site`
 
-W treści maila **zamiast "podgląd w załączniku"** użyj live linku:
-
+Treść maila musi zawierać live link:
 ```
-Przygotowaliśmy dla Pani/Pana gotowy podgląd nowej strony — bez żadnych zobowiązań:
-
 👉 https://<slug>.oryva.site
-
-Wystarczy kliknąć w link, żeby zobaczyć jak mogłaby wyglądać Pani/Pana nowoczesna strona internetowa.
 ```
 
 Dopasuj ton maila do:
 - **Persona** (Invisible Craftsman, Frustrated Modernizer, etc.)
-- **Segment** (HOT = bardziej bezpośredni, WARM = edukacyjny)
+- **Segment** (HOT = bardziej bezpośredni / Shock & Awe, WARM = edukacyjny)
 - **Branża i dane** (Ocena Google, ile recenzji, opis GBP)
 
-### 7. Zaktualizuj Pipeline Master
+Szablon bazowy maila: `/Users/kasiabochenska/Library/CloudStorage/GoogleDrive-hello@oryva.site/My Drive/ORYVA/cold-email-template.md`
 
-Sheet `5_Outreach` → kolumna **J** (Preview HTML) → wpisz `<slug>.oryva.site`
+Kolumny A–G są gotowe do skopiowania 1:1 do Google Sheets cold email sendera.
 
 ---
 
