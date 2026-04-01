@@ -43,5 +43,11 @@
     "created": "2026-03-20",
     "expires": "2026-05-20",
     "firma": "Zarate"
+  },
+  "testpreview": {
+    "created": "2026-04-01",
+    "expires": "2026-05-31",
+    "firma": "Test Preview",
+    "id": "TEST-001"
   }
 }
