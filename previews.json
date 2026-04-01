@@ -1,0 +1,47 @@
+{
+  "annamajkowska": {
+    "created": "2026-03-20",
+    "expires": "2026-05-20",
+    "firma": "Anna Majkowska"
+  },
+  "belvidere": {
+    "created": "2026-03-20",
+    "expires": "2026-05-20",
+    "firma": "Family Dental Belvidere"
+  },
+  "driandennis": {
+    "created": "2026-03-20",
+    "expires": "2026-05-20",
+    "firma": "Dr Ian Dennis"
+  },
+  "dropfamilydentistry": {
+    "created": "2026-03-20",
+    "expires": "2026-05-20",
+    "firma": "Drop Family Dentistry"
+  },
+  "grace": {
+    "created": "2026-03-20",
+    "expires": "2026-05-20",
+    "firma": "Grace Dental Care"
+  },
+  "griffissouthern": {
+    "created": "2026-03-20",
+    "expires": "2026-05-20",
+    "firma": "Griffis Southern"
+  },
+  "phillipsdmd": {
+    "created": "2026-03-20",
+    "expires": "2026-05-20",
+    "firma": "Phillips DMD"
+  },
+  "pittstondental": {
+    "created": "2026-03-20",
+    "expires": "2026-05-20",
+    "firma": "Pittston Dental"
+  },
+  "zarate": {
+    "created": "2026-03-20",
+    "expires": "2026-05-20",
+    "firma": "Zarate"
+  }
+}
