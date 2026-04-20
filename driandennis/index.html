@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YLE4F3MMN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7YLE4F3MMN');
+    </script>
     <title>Dr. Ian Dennis DMD | High Springs, FL</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -359,6 +367,57 @@
             filter: drop-shadow(0 10px 25px rgba(0,0,0,0.15));
         }
 
+        .main-circle .hero-photo {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            opacity: 0.95;
+        }
+        .main-circle::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(26,139,139,0.25), rgba(15,107,107,0.35));
+            pointer-events: none;
+        }
+        .main-circle .tooth-icon {
+            display: none;
+        }
+
+        .facility-banner {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(26, 139, 139, 0.15);
+            aspect-ratio: 16 / 7;
+        }
+        .facility-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .office-banner {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 16 / 6;
+            box-shadow: 0 20px 45px rgba(26, 139, 139, 0.18);
+        }
+        .office-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
         /* Floating Feature Cards */
         .feature-card {
             position: absolute;
@@ -640,12 +699,23 @@
             justify-content: center;
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+            position: relative;
         }
 
         .doctor-placeholder svg {
             width: 150px;
             height: 150px;
             fill: rgba(255,255,255,0.3);
+        }
+
+        .doctor-placeholder img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 22px;
         }
 
         .memory-badge {
@@ -1054,6 +1124,7 @@
                 <div class="sunshine-burst"></div>
                 <div class="outer-ring"></div>
                 <div class="main-circle">
+                    <img class="hero-photo" src="hero.jpg" alt="Dr. Ian Dennis DMD — modern dental care in High Springs, FL" loading="eager" width="1200" height="1200">
                     <svg class="tooth-icon" viewBox="0 0 64 80">
                         <path d="M32 4C22 4 14 12 14 22c0 6 2 12 4 18 2 6 4 12 6 16 1 2 3 4 4 6 1 2 3 4 4 4s3-2 4-4c1-2 3-4 4-6 2-4 4-10 6-16 2-6 4-12 4-18 0-10-8-18-18-18zm0 26c-4 0-8-4-8-8s4-8 8-8 8 4 8 8-4 8-8 8z"/>
                     </svg>
@@ -1096,6 +1167,9 @@
                 Our New Facility
             </p>
             <h2>State-of-the-Art Dental Care</h2>
+        </div>
+        <div class="facility-banner">
+            <img src="facility.jpg" alt="Interior of Dr. Ian Dennis's new dental facility in High Springs, FL" loading="lazy" width="1400" height="613">
         </div>
         <div class="facility-grid">
             <div class="facility-card">
@@ -1157,7 +1231,7 @@
             </div>
             <div class="doctor-image-wrapper">
                 <div class="doctor-placeholder">
-                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    <img src="doctor.jpg" alt="Dr. Ian Dennis DMD — dentist in High Springs, FL" loading="lazy" width="800" height="1000">
                 </div>
                 <div class="memory-badge">
                     <div class="quote">"Unbelievable memory for patients"</div>
@@ -1219,6 +1293,9 @@
     </section>
 
     <section class="contact-section" id="contact">
+        <div class="office-banner">
+            <img src="office.jpg" alt="Welcoming reception area at Dr. Ian Dennis's High Springs, FL practice" loading="lazy" width="1400" height="525">
+        </div>
         <div class="contact-wrapper">
             <div class="contact-info">
                 <h2>Ready for Modern Dental Care?</h2>

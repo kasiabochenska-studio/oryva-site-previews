@@ -21,6 +21,16 @@
       "destination": "/belvidere/index.html"
     },
     {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "driandennis.oryva.site"
+        }
+      ],
+      "destination": "/driandennis/$1"
+    },
+    {
       "source": "/",
       "has": [
         {
@@ -29,6 +39,16 @@
         }
       ],
       "destination": "/driandennis/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "phillipsdmd.oryva.site"
+        }
+      ],
+      "destination": "/phillipsdmd/$1"
     },
     {
       "source": "/",
@@ -41,6 +61,16 @@
       "destination": "/phillipsdmd/index.html"
     },
     {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "zarate.oryva.site"
+        }
+      ],
+      "destination": "/zarate/$1"
+    },
+    {
       "source": "/",
       "has": [
         {
@@ -49,6 +79,16 @@
         }
       ],
       "destination": "/zarate/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "dropfamilydentistry.oryva.site"
+        }
+      ],
+      "destination": "/dropfamilydentistry/$1"
     },
     {
       "source": "/",
@@ -61,6 +101,16 @@
       "destination": "/dropfamilydentistry/index.html"
     },
     {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "pittstondental.oryva.site"
+        }
+      ],
+      "destination": "/pittstondental/$1"
+    },
+    {
       "source": "/",
       "has": [
         {
@@ -69,6 +119,16 @@
         }
       ],
       "destination": "/pittstondental/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "griffissouthern.oryva.site"
+        }
+      ],
+      "destination": "/griffissouthern/$1"
     },
     {
       "source": "/",
@@ -92,4 +152,3 @@
     }
   ]
 }
-

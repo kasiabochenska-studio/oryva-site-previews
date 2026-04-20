@@ -62,9 +62,10 @@
         .btn-secondary { background: transparent; color: var(--charcoal); padding: 1rem 2.25rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid var(--charcoal); transition: all 0.3s ease; }
         .btn-secondary:hover { background: var(--charcoal); color: var(--warm-white); transform: translateY(-3px); }
         .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
-        .hero-shape { width: 500px; height: 500px; background: linear-gradient(135deg, var(--terracotta-light) 0%, var(--terracotta) 50%, var(--terracotta-dark) 100%); border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; position: relative; animation: morphShape 15s ease-in-out infinite, fadeScale 1s ease forwards; opacity: 0; transform: scale(0.8); }
+        .hero-shape { width: 500px; height: 500px; background: linear-gradient(135deg, var(--terracotta-light) 0%, var(--terracotta) 50%, var(--terracotta-dark) 100%); background-image: linear-gradient(135deg, rgba(108,92,231,0.35), rgba(0,184,148,0.2)), url('hero.jpg'); background-size: cover; background-position: center; border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; position: relative; animation: morphShape 15s ease-in-out infinite, fadeScale 1s ease forwards; opacity: 0; transform: scale(0.8); overflow: hidden; }
         .hero-shape::before { content: ''; position: absolute; inset: -30px; border: 2px solid var(--sage-light); border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; animation: morphShapeAlt 15s ease-in-out infinite; }
-        .hero-shape::after { content: '\1F9B7'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 8rem; filter: grayscale(1) brightness(2); opacity: 0.9; }
+        .about-image-main img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+        .map-placeholder { background-image: linear-gradient(135deg, rgba(85,239,196,0.45), rgba(0,184,148,0.45)), url('office.jpg') !important; background-size: cover !important; background-position: center !important; }
         .floating-card { position: absolute; background: var(--warm-white); border-radius: 20px; padding: 1.25rem 1.5rem; box-shadow: 0 15px 40px rgba(45, 42, 38, 0.1); animation: float 6s ease-in-out infinite; }
         .floating-card.card-1 { top: 10%; right: 5%; animation-delay: 0s; }
         .floating-card.card-2 { bottom: 15%; left: 5%; animation-delay: 2s; }
@@ -251,7 +252,7 @@
 
     <section class="about" id="about">
         <div class="about-image reveal">
-            <div class="about-image-main"><span class="doctor-placeholder">&#x1F469;&#x200D;&#x2695;&#xFE0F;</span></div>
+            <div class="about-image-main"><img src="doctor.jpg" alt="Dr. Jane Kenneth E. Zarate — family dentist in Santa Clara, CA" loading="lazy" width="800" height="1000"></div>
             <div class="about-accent"></div>
         </div>
         <div class="about-content reveal">
